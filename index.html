@@ -1,0 +1,926 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kandanuru Viswanatha Reddy - Senior DevOps Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #f59e0b;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        /* Glassmorphism effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        
+        .glass-card-dark {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        /* Hero gradient */
+        .hero-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+            background-size: 200% 200%;
+            animation: gradient 12s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Section titles */
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-gray-800 mb-10 md:mb-12 text-center relative pb-3;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        /* Skill items */
+        .skill-item {
+            @apply flex items-center p-4 rounded-xl transition-all duration-300 ease-out;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+        
+        .skill-item i {
+            @apply text-2xl mr-3;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .skill-item i[class*="devicon-"].colored {
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+        
+        /* Timeline */
+        .timeline-container {
+            position: relative;
+        }
+        
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            opacity: 0.2;
+        }
+        
+        .timeline-item {
+            @apply relative pl-10 md:pl-16 pb-12;
+        }
+        
+        .timeline-marker {
+            @apply absolute left-0 top-1 w-5 h-5 mt-1 rounded-full border-4 border-white shadow-lg;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        
+        .timeline-line {
+            @apply absolute left-[8.5px] top-6 bottom-0 w-0.5;
+            background: linear-gradient(to bottom, rgba(99, 102, 241, 0.3), rgba(16, 185, 129, 0.3));
+        }
+        
+        .timeline-content {
+            @apply ml-6 p-6 rounded-xl transition-all duration-300;
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Certification cards */
+        .cert-card {
+            @apply p-6 rounded-xl text-center transition-all duration-300;
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .cert-card i {
+            @apply text-4xl mb-4;
+        }
+        
+        /* Floating action button */
+        .fab-button {
+            @apply fixed bottom-8 right-8 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .fab-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Animated underline for nav links */
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Pulse animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-700 antialiased">
+
+    <!-- Floating action button -->
+    <a href="#contact" class="fab-button z-50">
+        <i class="fas fa-paper-plane text-xl"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-40 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold text-gray-800">
+                    <span class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">M N V D Satyanarayana Reddy</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600 font-medium">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-indigo-600 font-medium">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-indigo-600 font-medium">Experience</a>
+                    <a href="#certifications" class="nav-link text-gray-700 hover:text-indigo-600 font-medium">Certifications</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-gradient text-white pt-32 pb-24 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-full bg-repeat" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjwvZz48L2c+PC9zdmc+');"></div>
+        </div>
+        <div class="container mx-auto text-center relative z-10">
+            <div class="inline-block mb-6 pulse">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center mx-auto">
+                    <span class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-indigo-100 bg-clip-text text-transparent">MN</span>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Kandanuru Viswanatha Reddy</h1>
+            <p class="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto">Senior DevOps Engineer | Cloud Infrastructure Expert | Automation Specialist | Observability Engineer</p>
+            <div class="flex justify-center space-x-6">
+                <a href="mailto:viswanatha.kanda@gmail.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition duration-300" title="Email">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <a href="tel:+918074338466" class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition duration-300" title="Phone">
+                    <i class="fas fa-phone text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/viswanathakanda1221/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition duration-300" title="LinkedIn">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="https://medium.com/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition duration-300" title="Medium">
+                    <i class="fab fa-medium-m text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white relative">
+        <div class="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-indigo-50 to-transparent"></div>
+        <div class="container mx-auto max-w-5xl glass-card p-8 md:p-10 relative">
+            <h2 class="section-title">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                        <!-- Placeholder for profile image -->
+                        <img src="profile.jpg" alt="Profile Photo" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                        Senior DevOps Engineer with 12+ years of expertise in cloud-native infrastructure, Linux administration, and enterprise DevOps practices. Azure and Google Cloud Certified professional with extensive experience in designing and implementing CI/CD pipelines, Infrastructure as Code, and container orchestration solutions.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-indigo-500 mr-2"></div>
+                            <span class="text-gray-700">Azure & GCP Certified</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-indigo-500 mr-2"></div>
+                            <span class="text-gray-700">Kubernetes Expert</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-indigo-500 mr-2"></div>
+                            <span class="text-gray-700">CI/CD Architect</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full bg-indigo-500 mr-2"></div>
+                            <span class="text-gray-700">Infrastructure as Code</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-4 justify-center">
+                        <a href="#experience" class="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition duration-300 shadow-md hover:shadow-lg">
+                            View Experience
+                        </a>
+                        <a href="#contact" class="px-6 py-3 border border-indigo-600 text-indigo-600 rounded-lg font-medium hover:bg-indigo-50 transition duration-300">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-gradient-to-b from-white to-indigo-50 relative">
+        <div class="container mx-auto">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                
+                <!-- Cloud Platforms -->
+                <div class="glass-card p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-cloud text-indigo-600"></i>
+                        </div>
+                        Cloud Platforms
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <i class="devicon-amazonwebservices-original colored"></i>
+                            <span>AWS Ecosystem (EC2, EKS, S3, RDS, Lambda)</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-googlecloud-plain colored"></i>
+                            <span>GCP (GKE, Cloud Build, Cloud Run)</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-azure-plain colored"></i>
+                            <span>Microsoft Azure</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CI/CD Pipelines -->
+                <div class="glass-card p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-code-branch text-indigo-600"></i>
+                        </div>
+                        CI/CD Pipelines
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <i class="devicon-jenkins-line colored"></i>
+                            <span>Jenkins / Cloudbees CI</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-github-original colored"></i>
+                            <span>GitHub Actions</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-gitlab-plain colored"></i>
+                            <span>GitLab CI</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Argo CD</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Containerization & Orchestration -->
+                <div class="glass-card p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-cubes text-indigo-600"></i>
+                        </div>
+                        Container & Orchestration
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <i class="devicon-docker-plain colored"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-kubernetes-plain colored"></i>
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-kubernetes-plain colored"></i>
+                            <span>Helm</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            <span>ECS, Fargate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Infrastructure as Code -->
+                <div class="glass-card p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-code text-indigo-600"></i>
+                        </div>
+                        Infrastructure as Code
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <i class="devicon-terraform-plain colored"></i>
+                            <span>Terraform</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-amazonwebservices-original colored"></i>
+                            <span>AWS CDK</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-ansible-plain colored"></i>
+                            <span>Ansible</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Monitoring & Observability -->
+                <div class="glass-card p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-chart-line text-indigo-600"></i>
+                        </div>
+                        Monitoring & Observability
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <i class="devicon-grafana-original colored"></i>
+                            <span>Grafana</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-tachometer-alt" style="color: #1a75ff;"></i>
+                            <span>Dynatrace</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-prometheus-original colored"></i>
+                            <span>Prometheus</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-search" style="color: #ff7f0e;"></i>
+                            <span>ELK Stack</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scripting & Automation -->
+                <div class="glass-card p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-terminal text-indigo-600"></i>
+                        </div>
+                        Scripting & Automation
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <i class="devicon-python-plain colored"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-bash-plain" style="color: #4EAA25;"></i>
+                            <span>Shell Scripting</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-code"></i>
+                            <span>YAML</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-robot" style="color: #228B22;"></i>
+                            <span>Robocorp RPA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+<section id="experience" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="relative max-w-4xl mx-auto timeline-container">
+            
+            <!-- CGI -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-line"></div>
+                <div class="timeline-content">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                        <div>
+                            <p class="text-sm font-medium text-indigo-600 mb-1">Apr 2024 - Present</p>
+                            <h3 class="text-xl font-semibold text-gray-800">Senior Consultant</h3>
+                            <p class="text-md font-medium text-gray-600">CGI Consultant & Management Services</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-xs font-medium">Full-time</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm mb-6"> <!-- Added mb-6 here -->
+                        <li>Designed and implemented Infrastructure automation using Terraform on AWS.</li>
+                        <li>Developed IaC scripts for repeatable and scalable infrastructure deployments.</li>
+                        <li>Led a team of 6 junior engineers, providing mentorship and technical guidance.</li>
+                        <li>Collaborated with cross-functional teams on scalable/secure AWS infrastructure.</li>
+                        <li>Automated provisioning/configuration of JBoss/WildFly clusters on OCI (Terraform, Ansible).</li>
+                        <li>Managed migration of Java applications from OCI to GCP.</li>
+                        <li>Implemented IaC for GCP resources (Compute Engine, Cloud SQL, VPCs, Firewalls).</li>
+                        <li>Optimized CI/CD pipelines (Jenkins, GitLab CI) for Java apps on OCI/GCP.</li>
+                        <li>Configured monitoring/logging with GCP Stackdriver and Datadog.</li>
+                        <li>Migrated Robocorp RPA workflows from on-prem to AWS (EC2, Lambda, S3).</li>
+                        <li>Automated AWS infrastructure provisioning for RPA bots (Terraform, CloudFormation).</li>
+                        <li>Implemented AWS cost optimization techniques.</li>
+                        <li>Created AWS infrastructure (Lambda, Fargate, Secrets Manager, EventBridge) with GitLab CI integration.</li>
+                        <li>Set up Dynatrace dashboards for log alerting.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- <!-- TCS -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-line"></div>
+                <div class="timeline-content">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                        <div>
+                            <p class="text-sm font-medium text-indigo-600 mb-1">Jan 2023 - Apr 2024</p>
+                            <h3 class="text-xl font-semibold text-gray-800">Senior DevOps Engineer</h3>
+                            <p class="text-md font-medium text-gray-600">Tata Consultancy Services</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-xs font-medium">Full-time</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm mb-6"> <!-- Added mb-6 here -->
+                        <li>Designed and implemented multi-cloud architecture (AWS, GCP) using Terraform.</li>
+                        <li>Orchestrated containerized applications using Kubernetes (reduced deployment time by 40%).</li>
+                        <li>Configured Prometheus/Grafana monitoring (improved incident response by 25%).</li>
+                        <li>Developed IaC scripts using Terraform.</li>
+                        <li>Automated security scans with SonarQube.</li>
+                        <li>Led a team of 5 junior engineers.</li>
+                        <li>Built and optimized CI/CD pipelines (Cloudbees Jenkins EE, GitLab) (reduced failures by 30%).</li>
+                        <li>Integrated configuration management via Ansible.</li>
+                        <li>Conducted performance tuning on Apache Tomcat (20% improvement).</li>
+                        <li>Set up disaster recovery strategies and led drills.</li>
+                        <li>Implemented GitLab SAST.</li>
+                        <li>Collaborated on cost-optimization strategies (reduced cloud costs by 15%).</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Amazon DevOps -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-line"></div>
+                <div class="timeline-content">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                        <div>
+                            <p class="text-sm font-medium text-indigo-600 mb-1">May 2019 - Dec 2022</p>
+                            <h3 class="text-xl font-semibold text-gray-800">ML Data Ops Manager - DevOps</h3>
+                            <p class="text-md font-medium text-gray-600">Amazon</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-xs font-medium">Full-time</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm mb-6"> <!-- Added mb-6 here -->
+                        <li>Engineered CI/CD pipelines (Jenkins, Maven, Git) (increased release velocity by 35%).</li>
+                        <li>Deployed and managed containerized applications in Kubernetes (99.9% uptime).</li>
+                        <li>Configured Prometheus/Grafana monitoring (reduced downtime by 20%).</li>
+                        <li>Implemented IaC with Terraform for AWS services.</li>
+                        <li>Developed Dockerfiles and Docker-compose scripts.</li>
+                        <li>Administered Apache Tomcat servers (SSL, middleware).</li>
+                        <li>Optimized AWS resource usage (auto-scaling) (saved ~20% costs).</li>
+                        <li>Built custom Grafana dashboards.</li>
+                        <li>Integrated automated testing into CI/CD (reduced manual effort by 50%).</li>
+                        <li>Oversaw backup and recovery solutions (RDS snapshots, S3 versioning).</li>
+                        <li>Established code versioning/merging best practices (15% productivity increase).</li>
+                        <li>Spearheaded Docker adoption (30% deployment efficiency improvement).</li>
+                        <li>Implemented rolling updates and blue-green deployments in Kubernetes.</li>
+                        <li>Designed and managed multi-AZ AWS architecture (HA/failover).</li>
+                        <li>Developed custom alerts (Prometheus/Grafana).</li>
+                        <li>Enforced infrastructure compliance/security (IAM).</li>
+                        <li>Reduced AWS costs (Reserved Instances, right-sizing).</li>
+                        <li>Led performance tuning for Apache Tomcat.</li>
+                        <li>Coordinated DevSecOps adoption.</li>
+                        <li>Conducted routine AWS resource audits.</li>
+                        <li>Integrated ELK Stack for logging/analytics.</li>
+                        <li>Improved system performance via Ansible automation.</li>
+                        <li>Created automated backup/recovery plans.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Amazon Analyst -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                        <div>
+                            <p class="text-sm font-medium text-indigo-600 mb-1">Oct 2017 - May 2019</p>
+                            <h3 class="text-xl font-semibold text-gray-800">TRON Analyst & ML Data Specialist</h3>
+                            <p class="text-md font-medium text-gray-600">Amazon</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-xs font-medium">Full-time</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 text-sm"> <!-- No mb-6 needed for last item -->
+                        <li>Conducted data analysis for automation opportunities (improved efficiency by 25%).</li>
+                        <li>Utilized Six Sigma methodologies to optimize workflows.</li>
+                        <li>Created and maintained MS Excel dashboards for KPIs.</li>
+                        <li>Analyzed SQL queries for data extraction and reporting.</li>
+                        <li>Provided human supervisory control for automated tasks (99% accuracy).</li>
+                        <li>Documented procedures and collaborated on improvements.</li>
+                        <li>Conducted audits for data integrity and compliance.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 px-6 bg-gradient-to-b from-white to-indigo-50/30">
+        <div class="container mx-auto">
+            <h2 class="section-title">Certifications</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- AWS DevOps Pro -->
+                <div class="cert-card transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center">
+                            <i class="fab fa-aws text-4xl text-orange-500"></i>
+                        </div>
+                        <div class="pt-16 pb-8 px-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">AWS Certified DevOps Professional</h3>
+                            <p class="text-sm text-indigo-600 font-medium mb-4">Amazon Web Services</p>
+                            <div class="flex justify-center space-x-2 mb-5">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">Cloud</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Professional</span>
+                            </div>
+                            <div class="flex items-center justify-center text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>Valid until 2026</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-orange-400 to-orange-600 rounded-b-lg"></div>
+                    </div>
+                </div>
+                
+                <!-- AWS Solutions Architect Pro -->
+                <div class="cert-card transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center">
+                            <i class="fab fa-aws text-4xl text-orange-500"></i>
+                        </div>
+                        <div class="pt-16 pb-8 px-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">AWS Solutions Architect Pro</h3>
+                            <p class="text-sm text-indigo-600 font-medium mb-4">Amazon Web Services</p>
+                            <div class="flex justify-center space-x-2 mb-5">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">Architecture</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Professional</span>
+                            </div>
+                            <div class="flex items-center justify-center text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>Valid until 2025</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-orange-400 to-orange-600 rounded-b-lg"></div>
+                    </div>
+                </div>
+                
+                <!-- GCP Associate -->
+                <div class="cert-card transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center">
+                            <i class="fab fa-google text-4xl text-blue-500"></i>
+                        </div>
+                        <div class="pt-16 pb-8 px-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">GCP Associate Cloud Engineer</h3>
+                            <p class="text-sm text-indigo-600 font-medium mb-4">Google Cloud</p>
+                            <div class="flex justify-center space-x-2 mb-5">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">Cloud</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Associate</span>
+                            </div>
+                            <div class="flex items-center justify-center text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>Valid until 2026</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-b-lg"></div>
+                    </div>
+                </div>
+                
+                <!-- Azure Admin -->
+                <div class="cert-card transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center">
+                            <i class="fab fa-microsoft text-4xl text-blue-600"></i>
+                        </div>
+                        <div class="pt-16 pb-8 px-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">Azure Administrator Associate</h3>
+                            <p class="text-sm text-indigo-600 font-medium mb-4">Microsoft</p>
+                            <div class="flex justify-center space-x-2 mb-5">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">Cloud</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Associate</span>
+                            </div>
+                            <div class="flex items-center justify-center text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span>Valid until 2026</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-b-lg"></div>
+                    </div>
+                </div>
+                
+                <!-- Robocorp -->
+                <div class="cert-card transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center">
+                            <i class="fas fa-robot text-4xl text-green-500"></i>
+                        </div>
+                        <div class="pt-16 pb-8 px-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">Robocorp Automation Developer</h3>
+                            <p class="text-sm text-indigo-600 font-medium mb-4">Robocorp</p>
+                            <div class="flex justify-center space-x-2 mb-5">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">RPA</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Level I-III</span>
+                            </div>
+                            <div class="flex items-center justify-center text-sm text-gray-500">
+                                <i class="fas fa-infinity mr-2"></i>
+                                <span>No expiration</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-green-400 to-green-600 rounded-b-lg"></div>
+                    </div>
+                </div>
+                
+                <!-- Six Sigma -->
+                <div class="cert-card transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="relative">
+                        <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center">
+                            <i class="fas fa-award text-4xl text-yellow-500"></i>
+                        </div>
+                        <div class="pt-16 pb-8 px-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">Lean Six Sigma Yellow Belt</h3>
+                            <p class="text-sm text-indigo-600 font-medium mb-4">Six Sigma Global Institute</p>
+                            <div class="flex justify-center space-x-2 mb-5">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">Methodology</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Yellow Belt</span>
+                            </div>
+                            <div class="flex items-center justify-center text-sm text-gray-500">
+                                <i class="fas fa-infinity mr-2"></i>
+                                <span>Lifetime certification</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-b-lg"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300">
+                    <i class="fas fa-download mr-2"></i> Download All Certificates
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .cert-card {
+            @apply bg-white rounded-xl shadow-md overflow-hidden border border-gray-100;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            border-radius: 2px;
+        }
+    </style>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-6 bg-gradient-to-b from-white to-indigo-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="section-title">Education</h2>
+        
+            <div class="glass-card p-8 text-center relative overflow-hidden group">
+                <!-- Decorative elements -->
+                <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-indigo-100/30 blur-xl"></div>
+                <div class="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-purple-100/20 blur-xl"></div>
+            
+                <!-- Degree icon -->
+                <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-500">
+                    <i class="fas fa-graduation-cap text-4xl text-indigo-600"></i>
+                </div>
+            
+                <!-- University info (always visible) -->
+                <p class="text-lg text-indigo-600 font-medium">Lovely Professional University</p>
+                <p class="text-gray-500 mt-1">2011 - 2015</p>
+                
+                <!-- Degree name (hover reveal) -->
+                <div class="mt-6 h-16 flex items-center justify-center">
+                    <h3 class="text-2xl font-semibold text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute">
+                        B.Tech in Electronics and Communication Engineering
+                    </h3>
+                    <h3 class="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600 group-hover:opacity-0 transition-opacity duration-300">
+                        Hover to reveal degree
+                    </h3>
+                </div>
+                
+                <!-- Additional details -->
+                <div class="mt-8 pt-8 border-t border-gray-100">
+                    <p class="text-gray-600">Specialized in embedded systems and communication protocols with coursework in computer architecture and networking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <!-- Contact Section -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-16 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-full bg-repeat" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==');"></div>
+        </div>
+        <div class="container mx-auto text-center relative z-10">
+            <h2 class="text-3xl font-bold text-white mb-6">Let's Work Together</h2>
+            <p class="mb-8 text-lg max-w-2xl mx-auto">I'm currently open to new opportunities and collaborations. Feel free to reach out for consulting, projects, or just to say hello!</p>
+                    
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+                <div class="glass-card-dark p-6 rounded-xl">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-900/30 flex items-center justify-center">
+                        <i class="fas fa-envelope text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-white mb-2">Email</h3>
+                    <a href="mailto:mnvdsreddy93@gmail.com" class="text-indigo-300 hover:text-white transition duration-300">mnvdsreddy93@gmail.com</a>
+                </div>
+                        
+                <div class="glass-card-dark p-6 rounded-xl">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-900/30 flex items-center justify-center">
+                        <i class="fas fa-phone text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-white mb-2">Phone</h3>
+                    <a href="tel:+918074338466" class="text-indigo-300 hover:text-white transition duration-300">+91 8074338466</a>
+                </div>
+                        
+                <div class="glass-card-dark p-6 rounded-xl">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-900/30 flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-white mb-2">Location</h3>
+                        <p class="text-indigo-300">Hyderabad, India</p>
+                    </div>
+                </div>
+                    
+                <div class="flex justify-center space-x-6 mb-12">
+                <a href="https://www.linkedin.com/in/viswanathakanda1221/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white transition duration-300">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="https://medium.com/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white transition duration-300">
+                    <i class="fab fa-medium-m text-xl"></i>
+                </a>
+                <a href="https://github.com/reddy5310" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white transition duration-300">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://x.com/mnvdsreddy93" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white transition duration-300">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+            </div>
+                    
+            <div class="pt-8 border-t border-gray-800">
+                <p class="text-sm text-gray-400">&copy; 2025 Kandanuru Viswanatha Reddy. All rights reserved.</p>
+                <p class="text-xs mt-2 text-gray-500">Designed with <i class="fas fa-heart text-red-400"></i> by KVR</p>
+            </div>
+        </div>
+    </footer>
+        
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle functionality would go here
+        // Currently using a placeholder button in the nav
+                
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.timeline-item, .cert-card, .skill-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+        
+</body>
+</html>
